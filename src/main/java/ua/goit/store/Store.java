@@ -13,6 +13,7 @@ public class Store implements IStore {
 
     @Override
     public Map<String, ShopObject> getStoreShop() {
+// Minor: here will nice to use the Builder pattern
         ShopObject shopObject = new ShopObject();
         shopObject.setProductName("A");
         shopObject.setPriceOfOne(1.25F);

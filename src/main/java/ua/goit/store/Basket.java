@@ -18,6 +18,7 @@ public class Basket {
         float a =0;
         var storShop=iStore.getStoreShop();
         List<String> split = Arrays.asList(baket.toUpperCase().split(""));
+        // Java is type-safety language so it is nice to use types like String or int. Such code will be easier reviewed
         var collect = split.stream().collect(Collectors.groupingBy(Object::toString, Collectors.counting()));
         for (var entry : collect.entrySet())
             for (var entry1 : storShop.entrySet()) {
@@ -31,6 +32,8 @@ public class Basket {
                 }
             }
 
+        //It's not a best idea to return int or String in one method.
+        //Better just do the validation in the main method (in our case)
        return a!=0? a:"Basket is empty";
     }
 
